@@ -44,3 +44,9 @@ S: 4ed3bad5a93f1c1685c50958efe40fd566b8afdb0b2ef679013277506380ce1f
 ```
 
 Where V is the version string.
+
+For example how the signer is recovered:
+
+[Solidity Contract](https://github.com/hayeah/openzeppelin-solidity/blob/qtum/contracts/mocks/ECDSAMock.sol)
+
+[JS Calling Solidity Contract](https://github.com/hayeah/openzeppelin-solidity/blob/4cfc1a8e61ac4b7f673e9bead4e2efcbbdedf0f8/test/cryptography/ECDSA.test.js#L51)
