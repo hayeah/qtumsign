@@ -1,6 +1,8 @@
+const { randomBytes } = require('crypto');
+
 const bitcoin = require('bitcoinjs-lib'); // v3.x.x
 const bitcoinMessage = require('bitcoinjs-message');
-const wif = require('wif');
+// const wif = require('wif');
 
 const networks = {
   'qtum': {
@@ -33,7 +35,7 @@ const privateKey = keyPair.privateKey;
 const message = 'hello world';
 
 const msghash = bitcoinMessage.magicHash(message, network.messagePrefix);
-const signature = bitcoinMessage.sign(message, privateKey, keyPair.compressed, network.messagePrefix);
+const signature = bitcoinMessage.sign(message, privateKey, keyPair.compressed, network.messagePrefix, { extraEntropy: randomBytes(32) });
 
 console.log('msg hash:', msghash.toString('hex'));
 console.log('sig base64:', signature.toString('base64'));
